@@ -1,0 +1,265 @@
+<html>
+
+<head>
+    <title>
+        Flight Price Predictor
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+</head>
+
+<body>
+    <div style="width: 100%;
+    height: 40%; overflow: hidden;">
+        <img src="/static/images/flight.jpg" style="width: 100%; height: auto; position: relative; top: 0;">
+    </div>
+    <div class="impact">
+        <h2>We Make Your Travelling easy</h2>
+        <p>Embark on your journey with confidence and ease. We believe that every traveler
+            deserves a seamless experience from start to finish. Let us be your guide as you explore the world and make
+            unforgettable memories along the way.</p>
+        <br>
+        <p></p>
+    </div>
+    <div class="partners" id="partner">
+        <div class="box">
+            <img src="/static/images/download (1).jpeg" alt="1st">
+        </div>c
+        <div class="box">
+            <img src="/static/images/download (2).jpeg" alt="2nd">
+        </div>
+        <div class="box">
+            <img src="/static/images/download.jpeg" alt="3rd">
+        </div>
+        <div class="box">
+            <img src="/static/images/images (1).jpeg" alt="4th">
+        </div>
+        <div class="box">
+            <img src="/static/images/images (2).jpeg" alt="5th">
+        </div>
+        <div class="box">
+            <img src="/static/images/images (3).jpeg" alt="6th">
+        </div>
+        <div class="box">
+            <img src="/static/images/images (4).jpeg" alt="7th">
+        </div>
+        <div class="box">
+            <img src="/static/images/images.jpeg" alt="8th">
+        </div>
+    </div>
+    <br>
+    <br>
+    
+    <div class="basic-knowledge-header" style="display: flex;">
+        <div class="header-left">
+            <div class="container">
+                <h2>Flight Price Prediction</h2>
+                <form id="flight-prediction-form" action="{{ url_for('predict_datapoint')}}" method="post">
+                    <div class="form-group">
+                        <div class="input-box">
+                            <div class="input-field field">
+                                <label for="airline">Airline:</label>
+                                <select id="airline" name="airline">
+                                    <option value="SpiceJet">SpiceJet</option>
+
+                                     <option value="AirAsia">AirAsia</option>
+
+                                    <option value="Vistara">Vistara</option>
+
+                                    <option value="GO_FIRST">GO_FIRST</option>
+
+                                    <option value="Indigo">Indigo</option>
+
+                                    <option value="Air_India">Air_India</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <div class="input-box" style="display: flex; flex-grow: 1; justify-content: space-between;">
+                            <div class="input-field field">
+                                <label for="source_city">Source City:</label>
+                                <select class="form-control" name="source_city" placeholder="Enter you source_city" required>
+                                    <option class="placeholder" selected disabled value="">Select source_city</option>
+                                    <option value="Delhi">
+                                        Delhi
+                                    </option>
+                                    <option value="Mumbai">
+                                        Mumbai
+                                    </option>
+                                    <option value="Bangalore">
+                                        Bangalore
+                                    </option>
+                                    <option value="Kolkata">
+                                        Kolkata
+                                    </option>
+                                    <option value="Hyderabad">
+                                        Hyderabad
+                                    </option>
+                                    <option value="Chennai">
+                                        Chennai
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="input-field field">
+                                <label for="destination_city">Destination City:</label>
+                                <select class="form-control" name="destination_city" placeholder="Enter you destination_city" required>
+                                    <option class="placeholder" selected disabled value="">Select destination_city</option>
+                                    <option value="Delhi">
+                                        Delhi
+                                    </option>
+                                    <option value="Mumbai">
+                                        Mumbai
+                                    </option>
+                                    <option value="Bangalore">
+                                        Bangalore
+                                    </option>
+                                    <option value="Kolkata">
+                                        Kolkata
+                                    </option>
+                                    <option value="Hyderabad">
+                                        Hyderabad
+                                    </option>
+                                    <option value="Chennai">
+                                        Chennai
+                                    </option>
+                                </select>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="time" style="display: flex; flex-grow: 1; justify-content: space-between;">
+                            <div>
+                                <label for="departure_time">Departure Time:</label>
+                                <select class="form-control" name="departure_time" placeholder="Enter you departure_time" required>
+                                    <option class="placeholder" selected disabled value="">Select departure_time</option>
+                                    <option value="Evening">
+                                        Evening
+                                    </option>
+                                    <option value="Early_Morning">
+                                        Early_Morning
+                                    </option>
+                                    <option value="Morning">
+                                        Morning
+                                    </option>
+                                    <option value="Afternoon">
+                                        Afternoon
+                                    </option>
+                                    <option value="Night">
+                                        Night
+                                    </option>
+                                    <option value="Late_Night">
+                                        Late_Night
+                                    </option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="arrival_time">Arrival Time:</label>
+                                <select class="form-control" name="arrival_time" placeholder="Enter you arrival_time" required>
+                                    <option class="placeholder" selected disabled value="">Select arrival_timey</option>
+                                    <option value="Evening">
+                                        Evening
+                                    </option>
+                                    <option value="Early_Morning">
+                                        Early_Morning
+                                    </option>
+                                    <option value="Morning">
+                                        Morning
+                                    </option>
+                                    <option value="Afternoon">
+                                        Afternoon
+                                    </option>
+                                    <option value="Night">
+                                        Night
+                                    </option>
+                                    <option value="Late_Night">
+                                        Late_Night
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="stops">Stops:</label>
+                        <select class="form-control" name="stops" placeholder="Enter you stops" required>
+                            <option class="placeholder" selected disabled value="">Select stops</option>
+                            <option value="zero">
+                                zero
+                            </option>
+                            <option value="one">
+                                one
+                            </option>
+                            <option value="two_or_more">
+                                two_or_more
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="class">Class:</label>
+                        <select class="form-control" name="classes" placeholder="Enter you classes" required>
+                            <option class="placeholder" selected disabled value="">Select classes</option>
+                            <option value="Economy">
+                                Economy
+                            </option>
+                            <option value="Business">
+                                Business
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-box" style="display: flex; flex-grow: 1; justify-content: space-between;">
+                            <div class="input-field field">
+                                <label for="class">Enter Number of Days</label>
+                                <input class="form-control" type="number" name="duration" placeholder="Enter your duration" min='0' max='100' 
+                                    autocomplete="off" style="height: 35px;">
+                            </div>
+                            <div class="input-field field">
+                                <label for="class">Enter number of days left</label>
+                                <input class="form-control" type="number" name="days_left" placeholder="Enter your days_left" min='0' max='100'
+                                    autocomplete="off" style="height: 35px;">
+                            </div>
+                        </div>
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Predict your Price" required />
+                </form>
+                <div>
+                    Expected price : {{results}}
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <br><br><br><br>
+            <h4><i>
+                    Navigate the skies with confidence. Our flight prediction website <br>empowers you to plan, predict,
+                    and
+                    fly smarter.Let foresight guide <br> your journey, ensuring smooth takeoffs and seamless landings
+                    every
+                    time.
+                </i>
+            </h4><br><br>
+            <p id="para">Welcome to our flight prediction website! With cutting-edge algorithms and real-time<br>
+                data
+                analysis, we offer accurateforecasts for flight arrivals and departures. <br>Whether you're a
+                frequent
+                traveler or planning a journey, trust our platform<br> to provide reliable insights and help you
+                stay ahead
+                of schedule.<br> Experience the convenience of informed travel decisions with our intuitive
+                interface today!
+            </p>
+            <br>
+            <img src="/static/images/xyz.jpeg" style="border-radius: 10px;">
+        </div>
+    </div>
+    <br>
+    <br>
+</body>
+
+</html>
